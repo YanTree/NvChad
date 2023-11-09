@@ -10,7 +10,7 @@ M.ui = {
   },
   
 
-  ------------------------------- nvchad_ui modules -----------------------------
+  ------------------------------ nvchad_ui modules ----------------------------
   statusline = {
     theme = "default",
     separator_style = "round",
