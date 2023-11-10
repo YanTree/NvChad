@@ -1,5 +1,4 @@
-local opt = vim.opt;
-local g = vim.g;
+local opt = vim.opt
 
 --------------------------------- options -------------------------------------
 -- One line with max chars, otherwise with a gray verticaly line to hints you,
