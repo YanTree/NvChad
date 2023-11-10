@@ -6,6 +6,7 @@ local g = vim.g;
 -- it's make read code easily
 opt.colorcolumn = "80"
 
+opt.fileencoding = "utf-8"
 opt.backup = false
 
 -- High light current line
