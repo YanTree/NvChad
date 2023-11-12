@@ -15,6 +15,11 @@ M.ui = {
     theme = "default",
     separator_style = "default",
   },
+
+  -- nvdash (dashboard)
+  nvdash = {
+    load_on_startup = true,
+  },
 }
 
 
