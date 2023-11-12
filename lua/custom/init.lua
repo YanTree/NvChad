@@ -1,8 +1,7 @@
 local opt = vim.opt
 
 --------------------------------- options -------------------------------------
--- One line with max chars, otherwise with a gray verticaly line to hints you,
--- it's make read code easily
+-- One line with max chars, a gray verticaly line will hints you
 opt.colorcolumn = "80"
 
 opt.fileencoding = "utf-8"
@@ -15,5 +14,6 @@ opt.cursorline = true
 -- Enable relativenumber feature
 opt.relativenumber = true
 
--- Indenting
-
+-- Min visible columns or line when move cursor at editor corner
+opt.scrolloff = 8
+opt.sidescrolloff = 12
