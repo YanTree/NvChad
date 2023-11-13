@@ -13,6 +13,9 @@ M.disabled = {
 
     -- Copy all
     ["<C-c>"] = "",
+
+    -- new buffer
+    ["<leader>b"] = ""
   },
 }
 
@@ -26,6 +29,9 @@ M.general = {
   n = {
     -- Copy all
     ["<yA>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
+
+    -- about buffer
+    ["<leader>bn"] = { "<cmd> enew <CR>", "New buffer" },
   },
   v = {
     -- Move selected lines up or down
