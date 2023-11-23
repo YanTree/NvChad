@@ -9,6 +9,22 @@ plugins = {
       },
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "json",
+
+        -- rust
+        "rust",
+        "wgsl",
+        "wgsl_bevy",
+
+       -- low level
+        "c",
+      },
+    },
+  },
   -----------------------------------rust--------------------------------------
   {
     "simrat39/rust-tools.nvim",

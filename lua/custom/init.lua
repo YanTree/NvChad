@@ -17,3 +17,6 @@ opt.relativenumber = true
 -- Min visible columns or line when move cursor at editor corner
 opt.scrolloff = 8
 opt.sidescrolloff = 12
+
+
+vim.filetype.add({extension = {wgsl = "wgsl"}})
