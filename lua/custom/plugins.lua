@@ -2,17 +2,10 @@ local plugins = {}
 
 plugins = {
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "rust-analyzer",
-      },
-    },
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "lua"
         "json",
 
         -- rust
@@ -20,7 +13,6 @@ plugins = {
         "wgsl",
         "wgsl_bevy",
 
-       -- low level
         "c",
       },
     },
@@ -37,10 +29,6 @@ plugins = {
       require('rust-tools').setup(opts)
     end
   },
-  {
-    "tpope/vim-fugitive",
-    cmd = { "Git", "G",},
-  }
 }
 
 return plugins
