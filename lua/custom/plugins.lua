@@ -5,19 +5,15 @@ plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "lua"
+        "lua",
         "json",
-
-        -- rust
-        "rust",
         "wgsl",
         "wgsl_bevy",
-
         "c",
       },
     },
   },
-  -----------------------------------rust--------------------------------------
+  ---------------------------------rust--------------------------------------
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
