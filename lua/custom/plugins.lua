@@ -15,6 +15,16 @@ plugins = {
       },
     },
   },
+  {
+    "neovim/nvim-lspconfig",
+    init = function()
+      require("core.utils").lazy_load "nvim-lspconfig"
+    end,
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
+  },
   ---------------------------------rust--------------------------------------
   {
     "simrat39/rust-tools.nvim",
