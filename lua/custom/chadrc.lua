@@ -9,13 +9,6 @@ M.ui = {
     style = "atom",
   },
 
-
-  ------------------------------ nvchad_ui modules ----------------------------
-  statusline = {
-    theme = "default",
-    separator_style = "default",
-  },
-
   -- nvdash (dashboard)
   nvdash = {
     load_on_startup = true,
