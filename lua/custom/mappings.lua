@@ -33,6 +33,10 @@ M.disabled = {
     ["<leader>gt"] = "",
     ["<leader>cm"] = "",
 
+    -- whichkey
+    ["<leader>wK"] = "",
+    ["<leader>wk"] = "",
+
     -- Indent blankline
     ["<leader>cc"] = "",
 
@@ -58,7 +62,7 @@ M.general = {
     ["<C-a>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
     -- about buffer
-    ["<leader>bn"] = { "<cmd> enew <CR>", "New buffer" },
+    ["<leader>bn"] = { "<cmd> enew <CR>", "New empty buffer" },
     -- about help
     ["<leader>hs"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
@@ -108,6 +112,24 @@ M.telescope = {
     ["<leader>gff"] = { "<cmd> Telescope git_files <CR>", "Find file" },
     ["<leader>gfl"] = { "<cmd> Telescope git_bcommits <CR>", "File's commit history" },
     ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits history" },
+  },
+}
+
+M.whichkey = {
+  n = {
+    ["<leader>hk"] = {
+      function()
+        vim.cmd "WhichKey"
+      end,
+      "Which-key all keymaps",
+    },
+    ["<leader>hK"] = {
+      function()
+        local input = vim.fn.input "WhichKey: "
+        vim.cmd("WhichKey " .. input)
+      end,
+      "Which-key query lookup",
+    },
   },
 }
 
