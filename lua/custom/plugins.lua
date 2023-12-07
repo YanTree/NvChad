@@ -1,42 +1,31 @@
-local plugins = {}
+local overrides = require("custom.configs.overrides")
 
-plugins = {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "lua", "bash",
-        "vim", "vimdoc",
-        "toml", "yaml",
-        "json", "xml", "ssh_config",
-        "rust", "python", "cpp", "c", "c_sharp",
-        "wgsl", "wgsl_bevy", "hlsl", "glsl",
-        "make", "cmake",
-      },
-    },
-  },
+return {
+  ------------------------------ default plugins ------------------------------
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      require("core.utils").lazy_load "nvim-lspconfig"
-    end,
+    dependencies = {
+      {
+        "simrat39/rust-tools.nvim",
+        ft = "rust"
+      }
+    },
+
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
   },
-  ---------------------------------rust--------------------------------------
-  {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    dependencies = "neovim/nvim-lspconfig",
-    opts = function ()
-      return require "custom.configs.rust-tools"
-    end,
-    config = function(_, opts)
-      require('rust-tools').setup(opts)
-    end
-  },
-}
 
-return plugins
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
+
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. "syntax")
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+  },
+
+  { "williamboman/mason.nvim", opts = overrides.mason },
+}
