@@ -32,6 +32,11 @@ M.disabled = {
 
     -- Gitsigns 
     ["<leader>gb"] = "",
+    ["]c"] = "",
+    ["[c"] = "",
+    ["<leader>td"] = "",
+    ["<leader>ph"] = "",
+    ["<leader>rh"] = "",
   },
 }
 
@@ -84,6 +89,81 @@ M.telescope = {
     ["<leader>gff"] = { "<cmd> Telescope git_files <CR>", "Find file" },
     ["<leader>gfl"] = { "<cmd> Telescope git_bcommits <CR>", "File's commit history" },
     ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits history" },
+  },
+}
+
+M.gitsigns = {
+  n = {
+    ["<leader>g]"] = {
+      function()
+        if vim.wo.diff then
+          return "<leader>g]"
+        end
+        vim.schedule(function()
+          require("gitsigns").next_hunk()
+        end)
+        return "<Ignore>"
+      end,
+      "Jump to next hunk",
+      opts = { expr = true },
+    },
+
+    ["<leader>g["] = {
+      function()
+        if vim.wo.diff then
+          return "<leader>g["
+        end
+        vim.schedule(function()
+          require("gitsigns").prev_hunk()
+        end)
+        return "<Ignore>"
+      end,
+      "Jump to prev hunk",
+      opts = { expr = true },
+    },
+
+    -- Actions
+    ["<leader>gB"] = {
+      function()
+        package.loaded.gitsigns.blame_line()
+      end,
+      "Blame line",
+    },
+
+    ["<leader>gd"] = {
+      function()
+        require("gitsigns").diffthis()
+      end,
+      "Diff view hunk at point",
+    },
+
+    ["<leader>gp"] = {
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+      "Preview hunk at point",
+    },
+
+    ["<leader>gr"] = {
+      function()
+        require("gitsigns").reset_hunk()
+      end,
+      "Revert hunk at point",
+    },
+
+    ["<leader>gs"] = {
+      function()
+        require("gitsigns").stage_hunk()
+      end,
+      "Stage hunk at point",
+    },
+
+    ["<leader>gu"] = {
+      function()
+        require("gitsigns").undo_stage_hunk()
+      end,
+      "Undo stage hunk at point",
+    },
   },
 }
 
