@@ -15,16 +15,15 @@ M.disabled = {
     ["<C-c>"] = "",
 
     -- new buffer
-    ["<leader>b"] = ""
+    ["<leader>b"] = "",
   },
 }
-
 
 M.general = {
   i = {
     -- Go to beginning and end
-    ["<C-a>"] = { "<ESC>^i", "Beginning of lne"},
-    ["<C-e>"] = { "<End>", "End of lne"},
+    ["<C-a>"] = { "<ESC>^i", "Beginning of lne" },
+    ["<C-e>"] = { "<End>", "End of lne" },
   },
   n = {
     -- Copy all
@@ -37,7 +36,19 @@ M.general = {
     -- Move selected lines up or down
     ["J"] = { ":m '>+1<CR>gv=gv", "Move line up" },
     ["K"] = { ":m '<-2<CR>gv=gv", "Move line down" },
-  }
+  },
+}
+
+M.lsp = {
+  n = {
+    ["<leader>fm"] = {
+
+      function()
+        require("conform").format()
+      end,
+      "format with conform",
+    },
+  },
 }
 
 return M

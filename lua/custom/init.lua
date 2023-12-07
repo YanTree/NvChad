@@ -11,5 +11,4 @@ opt.backup = false
 opt.scrolloff = 5
 opt.sidescrolloff = 5
 
-
-vim.filetype.add({extension = {wgsl = "wgsl"}})
+vim.filetype.add { extension = { wgsl = "wgsl" } }

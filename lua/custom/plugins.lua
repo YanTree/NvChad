@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 return {
   ------------------------------ default plugins ------------------------------
@@ -7,8 +7,8 @@ return {
     dependencies = {
       {
         "simrat39/rust-tools.nvim",
-        ft = "rust"
-      }
+        ft = "rust",
+      },
     },
 
     config = function()
@@ -16,6 +16,15 @@ return {
       require "custom.configs.lspconfig"
     end,
   },
+
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require "custom.configs.conform"
+    end,
+  },
+
+  { "nvim-tree/nvim-tree.lua", opts = overrides.nvimtree },
 
   {
     "nvim-treesitter/nvim-treesitter",

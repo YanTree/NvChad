@@ -2,7 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = {"csharp_ls"}
+local servers = { "csharp_ls" }
 
 local custom_on_attach = function(client, bufnr)
   on_attach(client, bufnr)
@@ -21,7 +21,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- rust
-require("rust-tools").setup({
+require("rust-tools").setup {
   on_attach = custom_on_attach,
   capabilities = capabilities,
-})
+}

@@ -14,8 +14,22 @@ M.treesitter = {
   },
 }
 
+M.nvimtree = {
+  git = {
+    enable = true,
+  },
+  renderer = {
+    -- highlight_git = true,
+    icons = {
+      show = {
+        git = true,
+      },
+    },
+  },
+}
+
 M.mason = {
-  ensure_installed = {}
+  ensure_installed = {},
 }
 
 return M
