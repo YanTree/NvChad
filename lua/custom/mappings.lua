@@ -16,9 +16,23 @@ M.disabled = {
 
     -- new buffer
     ["<leader>b"] = "",
+    ["<leader>ch"] = "",
+
+    -- NvimTree
+    ["<C-n>"] = "",
+    ["<leader>e"] = "",
+
+    -- Telescope
+    ["<leader>fo"] = "",
+    ["<leader>fw"] = "",
+    ["<leader>fb"] = "",
+    ["<leader>fz"] = "",
+    ["<leader>gt"] = "",
+    ["<leader>cm"] = "",
   },
 }
 
+-- override default mappings
 M.general = {
   i = {
     -- Go to beginning and end
@@ -27,15 +41,43 @@ M.general = {
   },
   n = {
     -- Copy all
-    ["<yA>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
+    ["<C-a>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
     -- about buffer
     ["<leader>bn"] = { "<cmd> enew <CR>", "New buffer" },
+    -- about help
+    ["<leader>hs"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
   v = {
     -- Move selected lines up or down
     ["J"] = { ":m '>+1<CR>gv=gv", "Move line up" },
     ["K"] = { ":m '<-2<CR>gv=gv", "Move line down" },
+  },
+}
+
+M.nvimtree = {
+  n = {
+    -- toggle
+    ["<leader>op"] = { "<cmd> NvimTreeToggle <CR>", "Project sidebar" },
+
+    -- focus
+    ["<leader>oP"] = { "<cmd> NvimTreeFocus <CR>", "Find file in Project sidebar" },
+  },
+}
+
+M.telescope = {
+  n = {
+    -- file
+    ["<leader> "]  = { "<cmd> Telescope find_files <CR>", "Find files" },
+    ["<leader>fr"] = { "<cmd> Telescope oldfiles <CR>", "Recent files" },
+    -- buffer
+    ["<leader>bb"] = { "<cmd> Telescope buffers <CR>", "Switch buffers" },
+    -- search
+    ["<leader>ss"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Search in current buffer" },
+    ["<leader>sp"] = { "<cmd> Telescope live_grep <CR>", "Search in current project" },
+    -- git
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits list" },
   },
 }
 
