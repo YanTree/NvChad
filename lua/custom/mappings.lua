@@ -32,6 +32,7 @@ M.disabled = {
     ["<leader>fz"] = "",
     ["<leader>gt"] = "",
     ["<leader>cm"] = "",
+    ["<leader>th"] = "",
 
     -- whichkey
     ["<leader>wK"] = "",
@@ -112,6 +113,8 @@ M.telescope = {
     ["<leader>gff"] = { "<cmd> Telescope git_files <CR>", "Find file" },
     ["<leader>gfl"] = { "<cmd> Telescope git_bcommits <CR>", "File's commit history" },
     ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits history" },
+    -- theme
+    ["<leader>tt"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
   },
 }
 
