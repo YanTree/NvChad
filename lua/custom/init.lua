@@ -10,5 +10,3 @@ opt.backup = false
 -- Min visible columns or line when move cursor at editor corner
 opt.scrolloff = 5
 opt.sidescrolloff = 5
-
-vim.filetype.add { extension = { wgsl = "wgsl" } }
