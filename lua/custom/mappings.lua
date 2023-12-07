@@ -29,6 +29,9 @@ M.disabled = {
     ["<leader>fz"] = "",
     ["<leader>gt"] = "",
     ["<leader>cm"] = "",
+
+    -- Gitsigns 
+    ["<leader>gb"] = "",
   },
 }
 
@@ -77,7 +80,10 @@ M.telescope = {
     ["<leader>sp"] = { "<cmd> Telescope live_grep <CR>", "Search in current project" },
     -- git
     ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
-    ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits list" },
+    ["<leader>gb"] = { "<cmd> Telescope git_branches <CR>", "Git branches" },
+    ["<leader>gff"] = { "<cmd> Telescope git_files <CR>", "Find file" },
+    ["<leader>gfl"] = { "<cmd> Telescope git_bcommits <CR>", "File's commit history" },
+    ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits history" },
   },
 }
 
