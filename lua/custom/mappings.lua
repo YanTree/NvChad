@@ -18,6 +18,9 @@ M.disabled = {
     ["<leader>b"] = "",
     ["<leader>ch"] = "",
 
+    -- Tabufline
+    ["<leader>x"] = "",
+
     -- NvimTree
     ["<C-n>"] = "",
     ["<leader>e"] = "",
@@ -29,6 +32,9 @@ M.disabled = {
     ["<leader>fz"] = "",
     ["<leader>gt"] = "",
     ["<leader>cm"] = "",
+
+    -- Indent blankline
+    ["<leader>cc"] = "",
 
     -- Gitsigns 
     ["<leader>gb"] = "",
@@ -63,6 +69,19 @@ M.general = {
   },
 }
 
+M.tabufline = {
+  plugin = true,
+
+  n = {
+    ["<leader>bk"] = {
+      function()
+        require("nvchad.tabufline").close_buffer()
+      end,
+      "Kill buffer",
+    },
+  },
+}
+
 M.nvimtree = {
   n = {
     -- toggle
@@ -89,6 +108,26 @@ M.telescope = {
     ["<leader>gff"] = { "<cmd> Telescope git_files <CR>", "Find file" },
     ["<leader>gfl"] = { "<cmd> Telescope git_bcommits <CR>", "File's commit history" },
     ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits history" },
+  },
+}
+
+M.blankline = {
+  n = {
+    ["<leader>bc"] = {
+      function()
+        local ok, start = require("indent_blankline.utils").get_current_context(
+          vim.g.indent_blankline_context_patterns,
+          vim.g.indent_blankline_use_treesitter_scope
+        )
+
+        if ok then
+          vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { start, 0 })
+          vim.cmd [[normal! _]]
+        end
+      end,
+
+      "Jump to current context",
+    },
   },
 }
 
