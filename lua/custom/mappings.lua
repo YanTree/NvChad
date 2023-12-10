@@ -158,10 +158,10 @@ M.blankline = {
 
 M.gitsigns = {
   n = {
-    ["<leader>g]"] = {
+    ["]g"] = {
       function()
         if vim.wo.diff then
-          return "<leader>g]"
+          return "]g"
         end
         vim.schedule(function()
           require("gitsigns").next_hunk()
@@ -172,10 +172,10 @@ M.gitsigns = {
       opts = { expr = true },
     },
 
-    ["<leader>g["] = {
+    ["[g"] = {
       function()
         if vim.wo.diff then
-          return "<leader>g["
+          return "[g"
         end
         vim.schedule(function()
           require("gitsigns").prev_hunk()
