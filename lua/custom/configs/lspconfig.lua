@@ -2,7 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "csharp_ls" }
+local servers = { "csharp_ls", "nushell" }
 
 local custom_on_attach = function(client, bufnr)
   on_attach(client, bufnr)
