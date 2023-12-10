@@ -21,6 +21,14 @@ M.disabled = {
     -- Tabufline
     ["<leader>x"] = "",
 
+    -- Lspconfig
+    ["<leader>ls"] = "",
+    ["<leader>D"] = "",
+    ["<leader>ra"] = "",
+    ["<leader>ca"] = "",
+    ["<leader>lf"] = "",
+    ["<leader>q"] = "",
+
     -- NvimTree
     ["<C-n>"] = "",
     ["<leader>e"] = "",
@@ -41,13 +49,17 @@ M.disabled = {
     -- Indent blankline
     ["<leader>cc"] = "",
 
-    -- Gitsigns 
+    -- Gitsigns
     ["<leader>gb"] = "",
     ["]c"] = "",
     ["[c"] = "",
     ["<leader>td"] = "",
     ["<leader>ph"] = "",
     ["<leader>rh"] = "",
+  },
+  v = {
+    -- Lspconfig
+    ["<leader>ca"] = "",
   },
 }
 
@@ -75,14 +87,67 @@ M.general = {
 }
 
 M.tabufline = {
-  plugin = true,
-
   n = {
     ["<leader>bk"] = {
       function()
         require("nvchad.tabufline").close_buffer()
       end,
       "Kill buffer",
+    },
+  },
+}
+
+M.lspconfig = {
+  n = {
+    ["<leader>lh"] = {
+      function()
+        vim.lsp.buf.signature_help()
+      end,
+      "LSP signature help",
+    },
+
+    ["<leader>ld"] = {
+      function()
+        vim.lsp.buf.type_definition()
+      end,
+      "LSP type definition",
+    },
+
+    ["<leader>lr"] = {
+      function()
+        require("nvchad.renamer").open()
+      end,
+      "LSP rename",
+    },
+
+    ["<leader>la"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "LSP code action",
+    },
+
+    ["<leader>lf"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "Floating diagnostic",
+    },
+
+    ["<leader>ll"] = {
+      function()
+        vim.diagnostic.setloclist()
+      end,
+      "Diagnostic setloclist",
+    },
+  },
+
+  v = {
+    ["<leader>la"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "LSP code action",
     },
   },
 }
