@@ -29,7 +29,10 @@ M.nvimtree = {
 }
 
 M.mason = {
-  ensure_installed = {},
+  ensure_installed = {
+    -- at least one to avoid error
+    "stylua"
+  },
 }
 
 return M
