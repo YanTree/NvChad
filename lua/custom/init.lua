@@ -10,3 +10,7 @@ opt.backup = false
 -- Min visible columns or line when move cursor at editor corner
 opt.scrolloff = 5
 opt.sidescrolloff = 5
+
+-- vscode format snippets i.e json files
+local path = os.getenv("HOME") .. "/Library/snippets"
+vim.g.vscode_snippets_path = path
