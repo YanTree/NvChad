@@ -13,4 +13,4 @@ opt.sidescrolloff = 5
 
 -- vscode format snippets i.e json files
 local path = os.getenv("HOME") .. "/Library/snippets"
-vim.g.vscode_snippets_path = path
+vim.g.lua_snippets_path = path

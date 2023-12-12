@@ -36,7 +36,10 @@ return {
 
         -- register wgsl ft
         vim.filetype.add {
-          extension = { wgsl = "wgsl" },
+          extension = {
+            wgsl = "wgsl",
+            shader = "shader"
+          },
         }
     end,
   },
