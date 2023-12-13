@@ -69,6 +69,10 @@ M.general = {
     -- Go to beginning and end
     ["<C-a>"] = { "<ESC>^i", "Beginning of lne" },
     ["<C-e>"] = { "<End>", "End of lne" },
+
+    -- Luasnip
+    ["<C-n>"] = { "<Plug>luasnip-next-choice", "Next snippet node" },
+    ["<C-p>"] = { "<Plug>luasnip-prev-choice", "Prev snippet node" },
   },
   n = {
     -- Copy all
@@ -84,6 +88,11 @@ M.general = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Move line up" },
     ["K"] = { ":m '<-2<CR>gv=gv", "Move line down" },
   },
+  s = {
+    -- Luasnip
+    ["<C-n>"] = { "<Plug>luasnip-next-choice", "Next snippet node" },
+    ["<C-p>"] = { "<Plug>luasnip-prev-choice", "Prev snippet node" },
+  }
 }
 
 M.tabufline = {
