@@ -3,6 +3,16 @@ local overrides = require "custom.configs.overrides"
 return {
   ------------------------------ default plugins ------------------------------
   {
+    "NvChad/nvterm",
+    opts = overrides.nvterm,
+
+    config = function(_, opts)
+      require "base46.term"
+      require("nvterm").setup(opts)
+    end,
+  },
+
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       {

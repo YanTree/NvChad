@@ -1,6 +1,12 @@
 -- overriding default plugin configs!
 local M = {}
 
+M.nvterm = {
+  terminals = {
+    shell = "nu.exe",
+  }
+}
+
 M.treesitter = {
   ensure_installed = {
     "lua", "bash",
