@@ -38,7 +38,8 @@ return {
         vim.filetype.add {
           extension = {
             wgsl = "wgsl",
-            shader = "shader"
+            shader = "shader",
+            hlsl = "hlsl",
           },
         }
     end,
