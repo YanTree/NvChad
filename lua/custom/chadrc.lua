@@ -6,7 +6,7 @@ M.ui = {
 
   -- cmp themeing
   cmp = {
-    style = "atom",
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
   },
 
   -- nvdash (dashboard)

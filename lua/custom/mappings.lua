@@ -189,24 +189,26 @@ M.telescope = {
     ["<leader>gl"] = { "<cmd> Telescope git_commits <CR>", "Git commits history" },
     -- theme
     ["<leader>tt"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
+    -- keymap
+    ["<leader>hk"] = { "<cmd> Telescope keymaps <CR>", "Help about key binding" },
   },
 }
 
 M.whichkey = {
   n = {
-    ["<leader>hk"] = {
+    ["<leader>hK"] = {
       function()
         vim.cmd "WhichKey"
       end,
       "Which-key all keymaps",
     },
-    ["<leader>hK"] = {
-      function()
-        local input = vim.fn.input "WhichKey: "
-        vim.cmd("WhichKey " .. input)
-      end,
-      "Which-key query lookup",
-    },
+    -- ["<leader>hK"] = {
+    --   function()
+    --     local input = vim.fn.input "WhichKey: "
+    --     vim.cmd("WhichKey " .. input)
+    --   end,
+    --   "Which-key query lookup",
+    -- },
   },
 }
 
