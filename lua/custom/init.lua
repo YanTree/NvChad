@@ -14,3 +14,13 @@ opt.sidescrolloff = 5
 -- vscode format snippets i.e json files
 local path = os.getenv("HOME") .. "/Library/snippets"
 vim.g.lua_snippets_path = path
+
+
+-- register wgsl ft
+vim.filetype.add {
+  extension = {
+    wgsl = "wgsl",
+    shader = "shader",
+    hlsl = "hlsl",
+  },
+}
