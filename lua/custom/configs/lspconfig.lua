@@ -28,5 +28,5 @@ require("rust-tools").setup({
   }
 })
 
--- for lspsaga plugin
+-- lspsaga package
 require("lspsaga").setup({})
