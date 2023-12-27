@@ -16,6 +16,9 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
+        "nvimdev/lspsaga.nvim"
+      },
+      {
         "simrat39/rust-tools.nvim",
         ft = "rust",
       },

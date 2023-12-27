@@ -21,7 +21,12 @@ for _, lsp in ipairs(servers) do
 end
 
 -- rust
-require("rust-tools").setup {
-  on_attach = custom_on_attach,
-  capabilities = capabilities,
-}
+require("rust-tools").setup({
+  server = {
+    capabilities = capabilities,
+    on_attach = custom_on_attach,
+  }
+})
+
+-- for lspsaga plugin
+require("lspsaga").setup({})

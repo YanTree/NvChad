@@ -16,7 +16,7 @@ M.treesitter = {
     "rust", "python", "cpp", "c", "c_sharp",
     "wgsl", "wgsl_bevy", "hlsl", "glsl",
     "make", "cmake",
-    "markdown", "org",
+    "markdown", "markdown_inline", "org",
   },
 }
 

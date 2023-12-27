@@ -22,12 +22,17 @@ M.disabled = {
     ["<leader>x"] = "",
 
     -- Lspconfig
+    ["gD"] = "",
+    ["gi"] = "",
     ["<leader>ls"] = "",
     ["<leader>D"] = "",
     ["<leader>ra"] = "",
     ["<leader>ca"] = "",
     ["<leader>lf"] = "",
     ["<leader>q"] = "",
+    ["<leader>wa"] = "",
+    ["<leader>wr"] = "",
+    ["<leader>wl"] = "",
 
     -- NvimTree
     ["<C-n>"] = "",
@@ -108,56 +113,19 @@ M.tabufline = {
 
 M.lspconfig = {
   n = {
-    ["<leader>lh"] = {
-      function()
-        vim.lsp.buf.signature_help()
-      end,
-      "LSP signature help",
-    },
-
-    ["<leader>ld"] = {
-      function()
-        vim.lsp.buf.type_definition()
-      end,
-      "LSP type definition",
-    },
-
-    ["<leader>lr"] = {
-      function()
-        require("nvchad.renamer").open()
-      end,
-      "LSP rename",
-    },
-
-    ["<leader>la"] = {
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      "LSP code action",
-    },
-
-    ["<leader>lf"] = {
-      function()
-        vim.diagnostic.open_float { border = "rounded" }
-      end,
-      "Floating diagnostic",
-    },
-
-    ["<leader>ll"] = {
-      function()
-        vim.diagnostic.setloclist()
-      end,
-      "Diagnostic setloclist",
-    },
+    -- Lspsaga package keymapping
+    ["gd"] = { "<cmd> Lspsaga peek_definition <CR>", "LSP goto definition" },
+    ["K"] = { "<cmd> Lspsaga hover_doc <CR>", "LSP hover doc" },
+    ["gr"] = { "<cmd> Lspsaga finder <CR>", "LSP references" },
+    ["<leader>lr"] = { "<cmd> Lspsaga rename <CR>", "LSP rename" },
+    ["<leader>la"] = { "<cmd> Lspsaga code_action <CR>", "LSP code action" },
+    ["[d"] = { "<cmd> Lspsaga diagnostic_jump_prev <CR>", "LSP prev diagnostic" },
+    ["]d"] = { "<cmd> Lspsaga diagnostic_jump_next <CR>", "LSP next diagnostic" },
+    ["<leader>ll"] = { "<cmd> Lspsaga outline <CR>", "LSP code structure" },
   },
 
   v = {
-    ["<leader>la"] = {
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      "LSP code action",
-    },
+    ["<leader>la"] = { "<cmd> Lspsaga code_action <CR>", "LSP code action" },
   },
 }
 
